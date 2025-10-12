@@ -47,12 +47,12 @@
 - pip install python-jose[cryptography]
 - pip install psycopg2 firebase-admin
 
-- Vào thư mục app/, chạy lệnh sau để để mở cổng kết nối
+- Vào thư mục app/, chạy lệnh sau để để mở cổng kết nối:
 ```
 python -m uvicorn main:app --host 127.0.0.1 --port 8000 --reload (chỉ truy cập trên máy nội bộ)
 hoặc
 python -m uvicorn main:app --host 0.0.0.0 --port 8000 --reload (cho phép truy cập trên các thiết bị cùng mạng LAN)
-
+```
 - Truy cập trang web:
 ```
 host: http://127.0.0.1:8000
