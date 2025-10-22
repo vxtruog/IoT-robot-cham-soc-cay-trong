@@ -39,13 +39,24 @@
 - Tải phần mềm PostgreSQL để cấu hình Server
 - Truy cập Firebase, tạo project, tải tệp .json về và đặt tên (ví dụ robot-cham-soc-cay-trong.json)
 - Truy cập Firebase, tạo database, lấy đường dẫn để liên kết (ví dụ https://robot-cham-soc-cay-trong-default-rtdb.asia-southeast1.firebasedatabase.app/)
+- Tải các phần mềm
+```
+pip install fastapi[all]
+pip install psycopg2
+pip install sqlalchemy
+pip install passlib[bcrypt]
+pip install python-jose[cryptography]
+pip install psycopg2 firebase-admin
+```
+- Có thể cần phải đồng bộ thời gian giữa laptop và firebase, truy cập Powershell với quyền quản trị viên
+```
+cmd /c "sc config w32time start= auto"
+cmd /c "sc start w32time"
 
-- pip install fastapi[all]
-- pip install psycopg2
-- pip install sqlalchemy
-- pip install passlib[bcrypt]
-- pip install python-jose[cryptography]
-- pip install psycopg2 firebase-admin
+cmd /c "w32tm /resync"
+
+cmd /c "w32tm /query /status"
+```
 
 - Vào thư mục app/, chạy lệnh sau để để mở cổng kết nối:
 ```
